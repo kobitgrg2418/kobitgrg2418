@@ -17,7 +17,7 @@ Hey, I am Kobit Gurung and I am a full-developer specialized in Frontend as i ha
 
 ## 📊 My Contributions
 
-[![Check out my contributions](https://img.shields.io/badge/Profile-View-blue)](https://your-vercel-app.vercel.app)
+[![Check out my contributions](https://img.shields.io/badge/Profile-View-blue)](https://www.kobitgrg.com.np)
 
 ---
 [![](https://komarev.com/ghpvc/?username=kobitgrg2418&icon=0&color=0)](https://visitcount.itsvg.in)
