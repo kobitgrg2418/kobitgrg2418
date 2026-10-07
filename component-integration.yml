@@ -1,0 +1,290 @@
+# ContributionSkyline Component Integration
+
+## Project Setup
+
+### Initial Project State
+- The project directory was empty (only contained README.md and .git folder)
+- No existing package.json, TypeScript, or Tailwind CSS configuration
+
+### Setup Steps Performed
+
+#### 1. Initialize Next.js Project
+```bash
+npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*" --use-npm
+```
+
+**Configuration Applied:**
+- TypeScript enabled
+- Tailwind CSS enabled
+- ESLint enabled
+- App Router (src directory structure)
+- Import alias: `@/*` pointing to `src/`
+- Package manager: npm
+
+#### 2. Install and Configure shadcn/ui
+```bash
+npx shadcn@latest init --yes --defaults
+```
+
+**Configuration Applied:**
+- Framework: Next.js (auto-detected)
+- Tailwind CSS v4 (auto-detected)
+- Import alias: `@/*` (validated)
+- Components created:
+  - `src/components/ui/button.tsx`
+  - `src/lib/utils.ts`
+- Updated `src/app/globals.css` with shadcn styles
+- Created `components.json` configuration
+
+#### 3. Component Directory Structure
+The project now follows the standard shadcn/ui structure:
+```
+src/
+├── components/
+│   ├── ui/
+│   │   ├── button.tsx          # shadcn default component
+│   │   └── contribution-skyline.tsx  # newly added component
+│   └── demo.tsx                # demo component
+├── lib/
+│   └── utils.ts                # shadcn utilities
+└── app/
+    ├── globals.css             # global styles
+    ├── layout.tsx              # root layout
+    └── page.tsx                # home page (updated to use demo)
+```
+
+## Component Integration
+
+### Component Details
+
+**File:** `src/components/ui/contribution-skyline.tsx`
+
+**Component Name:** ContributionSkyline
+
+**Type:** Client Component (`"use client"`)
+
+**Description:**
+A GitHub-style contribution heat map that transforms into an isometric 3D skyline. Features include:
+- 2D/3D view toggle with smooth morphing animation
+- Interactive hover states with tooltips
+- Keyboard navigation (arrow keys)
+- Drag-to-orbit in 3D mode
+- Multiple color palettes (GitHub, Halloween, Ocean, Ember, Grape, Mono)
+- Dark/light theme support
+- Responsive design
+- Statistics display (total contributions, streaks, busiest day)
+- Custom date range support
+- Generated sample data when no data provided
+
+### Props Interface
+
+```typescript
+export interface ContributionSkylineProps {
+  /** One entry per day, `YYYY-MM-DD`. Repeated dates add up. Omit for a generated sample year. */
+  data?: ContributionDay[]
+  /** Last day shown. Defaults to the latest date in `data`, or today. */
+  endDate?: string | Date
+  /** Controlled view. */
+  view?: View
+  /** Uncontrolled starting view. The 3D view rises out of the flat one when it first scrolls into sight. */
+  defaultView?: View
+  onViewChange?: (view: View) => void
+  /** A preset, four colours, or `{ light, dark }` sets of four. */
+  palette?: PaletteInput
+  /** Heading. Defaults to "{total} contributions in the last year". */
+  title?: React.ReactNode
+  /** Singular noun for a unit of activity. */
+  unit?: string
+  /** Plural noun. Defaults to `unit + "s"`. */
+  unitPlural?: string
+  /** Multiplies bar heights in 3D. */
+  heightScale?: number
+  /** Morph length, ms. */
+  duration?: number
+  /** 0 puts Sunday on the top row, 1 puts Monday there. */
+  weekStart?: 0 | 1
+  /** Drag to orbit in 3D. */
+  orbit?: boolean
+  showStats?: boolean
+  showLegend?: boolean
+  showToggle?: boolean
+  /** Replaces the hint under the chart. `null` renders none. */
+  footer?: React.ReactNode
+  locale?: string
+  /** Seed for the generated sample year. */
+  seed?: number
+  onCellClick?: (day: ContributionDay) => void
+  className?: string
+}
+```
+
+### Usage Example
+
+**Basic Usage (Demo Component):**
+```tsx
+"use client"
+
+import ContributionSkyline from "@/components/ui/contribution-skyline"
+
+export default function Demo() {
+  return (
+    <div className="w-full bg-background px-4 py-10 sm:px-8">
+      <div className="mx-auto w-full max-w-[980px]">
+        <ContributionSkyline endDate="2017-11-08" />
+      </div>
+    </div>
+  )
+}
+```
+
+**With Custom Data:**
+```tsx
+import ContributionSkyline from "@/components/ui/contribution-skyline"
+
+const myData = [
+  { date: "2024-01-01", count: 5 },
+  { date: "2024-01-02", count: 10 },
+  // ... more data
+]
+
+<ContributionSkyline data={myData} palette="ocean" />
+```
+
+**With Custom Styling:**
+```tsx
+<ContributionSkyline
+  className="my-custom-class"
+  palette="grape"
+  heightScale={1.5}
+  showStats={true}
+  showLegend={true}
+/>
+```
+
+## Dependencies
+
+### External Dependencies
+The component uses only React - no external dependencies required beyond the project's existing setup.
+
+### Project Dependencies Installed
+- `next` - Next.js framework
+- `react` - React library
+- `react-dom` - React DOM
+- `tailwindcss` - CSS framework
+- `typescript` - TypeScript compiler
+- `@types/node` - Node.js type definitions
+- `@types/react` - React type definitions
+- `@types/react-dom` - React DOM type definitions
+- `eslint` - Linting
+- `eslint-config-next` - Next.js ESLint config
+- `@tailwindcss/turbopack` - Tailwind Turbo bundler
+
+### shadcn/ui Dependencies
+- `class-variance-authority` - For component variants
+- `clsx` - For conditional class names
+- `tailwind-merge` - For merging Tailwind classes
+- `lucide-react` - Icon library (auto-installed by shadcn)
+
+## Running the Project
+
+### Development Server
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:3000`
+
+### Build for Production
+```bash
+npm run build
+```
+
+### Start Production Server
+```bash
+npm start
+```
+
+## Component Features
+
+### Interaction Features
+- **Hover**: Shows tooltip with contribution count and date
+- **Click**: Pins the selected day
+- **Arrow Keys**: Navigate through the grid
+- **Drag (3D mode)**: Orbit around the skyline
+- **Double-click (3D mode)**: Reset camera to default position
+- **Legend Hover**: Isolate specific activity levels
+
+### Visual Features
+- **Smooth Animations**: Morphing between 2D and 3D views
+- **Responsive Layout**: Adapts to different screen sizes
+- **Theme Support**: Automatically adapts to dark/light mode
+- **Color Palettes**: 6 built-in palettes plus custom support
+- **Statistics**: Displays contribution totals, streaks, and busiest days
+
+### Accessibility
+- **ARIA Labels**: Full screen reader support
+- **Keyboard Navigation**: Complete keyboard control
+- **Focus Management**: Proper focus handling
+- **Reduced Motion**: Respects `prefers-reduced-motion` preference
+
+## Customization
+
+### Color Palettes
+Built-in palettes:
+- `github` - Classic GitHub green (default)
+- `halloween` - Orange and brown
+- `ocean` - Blue tones
+- `ember` - Red and orange
+- `grape` - Purple tones
+- `mono` - Grayscale
+
+Custom palette example:
+```tsx
+<ContributionSkyline
+  palette={{
+    light: ["#ff0000", "#ff6600", "#ffcc00", "#ff0000"],
+    dark: ["#660000", "#993300", "#cc6600", "#ff3300"]
+  }}
+/>
+```
+
+### Custom Styling
+The component uses CSS custom properties for theming:
+- `--color-background` - Background color
+- `--color-foreground` - Text color
+- `--color-border` - Border color
+- `--color-muted-foreground` - Muted text color
+
+These are automatically set by shadcn/ui's theme system.
+
+## Notes
+
+### Why /components/ui Directory
+The `/components/ui` directory is the standard convention for shadcn/ui components. This structure:
+- Keeps UI components organized
+- Allows for easy discovery and reuse
+- Follows shadcn/ui best practices
+- Enables easy component installation via shadcn CLI
+- Maintains consistency with the ecosystem
+
+### Component Requirements
+- **Client Component**: Uses `"use client"` directive for browser APIs (Canvas, ResizeObserver, IntersectionObserver)
+- **No External Icons**: Uses inline SVG icons (GridIcon, CubeIcon)
+- **No Images**: Pure Canvas rendering - no image assets needed
+- **TypeScript**: Full TypeScript support with exported types
+
+### Browser Support
+- Modern browsers with Canvas API support
+- Requires ES6+ features (const, let, arrow functions, etc.)
+- IntersectionObserver API (with polyfill fallback)
+- ResizeObserver API
+
+## Future Enhancements
+
+Potential improvements:
+- Add prop for custom date formatting
+- Support for different calendar systems
+- Export functionality (PNG/SVG)
+- More animation presets
+- Custom data aggregation modes
+- Integration with GitHub API for real data
