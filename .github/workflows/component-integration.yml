@@ -1,0 +1,39 @@
+name: Component Integration
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build Next.js app
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check npm project files
+        run: |
+          if [ ! -f package.json ]; then
+            echo "::error::package.json is missing. Set up the Next.js, TypeScript, Tailwind CSS, and shadcn project before running this build."
+            exit 1
+          fi
+          if [ ! -f package-lock.json ]; then
+            echo "::error::package-lock.json is missing. Commit the npm lockfile so CI can install reproducible dependencies."
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
