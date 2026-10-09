@@ -16,7 +16,7 @@
 
 💬 Ask me about **React, Next.js, Node.js, APIs, and full-stack development**
 
-⚡ Fun fact **I enjoy turning ideas into practical, user-focused products**
+⚡ Fun fact **I am watercolor artist (district level) and I enjoy turning ideas into practical, user-focused products**
 
  </div>
  
