@@ -1,5 +1,7 @@
 # 💫 About Me:
-I'm Kobit Gurung and I'm specialized in full-stack web development <br>I'm ready to collaborate with you guys. 
+I'm Kobit Gurung and I'm specialized in full-stack web development <br>I enjoy working across the entire stack, from designing robust backend systems and REST APIs with Django to creating fast, responsive, and intuitive interfaces with Next.js.
+
+<br>What excites me most is turning ideas into complete digital products. I focus on clean architecture, reusable components, efficient APIs, database design, and seamless frontend-backend integration . 
 
 
 ## 🌐 Socials:
