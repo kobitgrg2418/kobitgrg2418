@@ -6,9 +6,7 @@
 
 <h3 align="center">A passionate full-stack developer building clean and modern digital experiences</h3>
 
-<div align="center">
-  <img src="https://i.giphy.com/media/xTiTnIHzAJ6Wg1nfAE/giphy.gif" alt="I'm in reaction GIF" width="420" />
-</div>
+
 
 <br/>
 
@@ -67,7 +65,11 @@
   <br/>
   <img width=325 align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kobitgrg2418&hide=HTML&langs_count=8&layout=compact&theme=react&border_radius=10&size_weight=0.5" alt="top languages"/>
 </div>
-
+<br/>
+<br/>
+<div align="center">
+  <img src="[https://i.giphy.com/media/xTiTnIHzAJ6Wg1nfAE/giphy.gif](https://media1.tenor.com/m/DUlvPVrPZrwAAAAd/hacker-pc.gif)" alt="I'm in reaction GIF" width="420" />
+</div>
 <br/><br/>
 
 <hr/>
