@@ -50,7 +50,6 @@
   <h2>🐍 My Contributions 🐍</h2>
   <br>
   <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/kobitgrg2418/kobitgrg2418/output/github-snake-dark.svg" />
-  
   <br/><br/><br/>
 </div>
 
