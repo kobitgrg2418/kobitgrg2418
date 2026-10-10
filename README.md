@@ -49,7 +49,7 @@
 <hr/>
 
 <div align="center">
-  <h2>🐍 My Contributions 🐍</h2>
+  <h2> My Contributions </h2>
   <br>
   <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/kobitgrg2418/kobitgrg2418/output/github-snake-dark.svg" />
   <br/><br/><br/>
@@ -67,9 +67,7 @@
 </div>
 <br/>
 <br/>
-<div align="center">
-  <img src="[https://i.giphy.com/media/xTiTnIHzAJ6Wg1nfAE/giphy.gif](https://media1.tenor.com/m/DUlvPVrPZrwAAAAd/hacker-pc.gif)" alt="I'm in reaction GIF" width="420" />
-</div>
+
 <br/><br/>
 
 <hr/>
