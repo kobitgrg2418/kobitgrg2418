@@ -7,7 +7,7 @@
 <h3 align="center">A passionate full-stack developer building clean and modern digital experiences</h3>
 
 <div align="center">
-  <img src="https://media.tenor.com/images/fd3c568d569eb518b2033e0e819b8c10/tenor.gif" alt="I'm in reaction GIF" width="420" />
+  <img src="https://i.giphy.com/media/xTiTnIHzAJ6Wg1nfAE/giphy.gif" alt="I'm in reaction GIF" width="420" />
 </div>
 
 <br/>
