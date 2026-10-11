@@ -12,13 +12,13 @@
 
 <div align="center">
   
-  🔭 I'm currently working on **full-stack web applications and digital products**
+   I'm currently working on **full-stack web applications and digital products**
   
-  🌱 I'm currently learning **Docker, cloud deployment, and modern frontend architecture**
+   I'm currently learning **Docker, cloud deployment, and modern frontend architecture**
  
-💬 Ask me about **React, Next.js, Node.js, APIs, and full-stack development**
+   Ask me about **React, Next.js, Node.js, APIs, and full-stack development**
  
-⚡ Fun fact **I am a watercolor artist and I enjoy turning ideas into practical, user-focused products**
+   Fun fact **I am a watercolor artist and I enjoy turning ideas into practical, user-focused products**
  
   </div>
   
