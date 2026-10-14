@@ -18,7 +18,8 @@
  
    Ask me about **React, Next.js, Node.js, APIs, and full-stack development**
  
-   Fun fact **I am a watercolor artist and I enjoy turning ideas into practical, user-focused products**
+   Fun fact **I am a watercolor artist and I enjoy turning ideas into practical, user-focused products, i can create a immersive frontend making it unique
+**
  
   </div>
   
